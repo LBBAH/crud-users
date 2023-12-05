@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-user',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class EditUserComponent {
 
+  constructor(    
+    private router:Router    
+  ) { }
+
+  registros(){
+    this.router.navigate(['registros']);    
+
+  }
 }
