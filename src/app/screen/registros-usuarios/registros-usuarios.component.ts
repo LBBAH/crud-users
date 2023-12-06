@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ServiceApiService } from 'src/app/service-api.service';
 
 @Component({
   selector: 'app-registros-usuarios',
@@ -8,11 +9,16 @@ import { Router } from '@angular/router';
 })
 export class RegistrosUsuariosComponent implements OnInit{
 
+
+  Usuarios:any;
+
   constructor(    
-    private router:Router    
+    private router:Router,
+    private apiService:ServiceApiService
   ) { }
+  
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.getUsers()    
   }
 
   editarUsuario(id:any){
@@ -21,6 +27,14 @@ export class RegistrosUsuariosComponent implements OnInit{
 
   borrarUsuario(){
     alert("Usuario eliminado con exito")
+  }
+
+
+  getUsers(){
+    this.apiService.getUsers().subscribe(res=>{
+      console.log(res)
+      this.Usuarios=res;
+    })
   }
 }
 

@@ -8,6 +8,7 @@ import { RegistrosUsuariosComponent } from './screen/registros-usuarios/registro
 import { EditUserComponent } from './screen/edit-user/edit-user.component';
 import * as Sentry from "@sentry/angular-ivy";
 import { Router } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { Router } from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule    
   ],
   providers: [
     {
