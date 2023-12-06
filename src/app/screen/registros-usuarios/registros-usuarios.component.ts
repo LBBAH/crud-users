@@ -11,6 +11,7 @@ export class RegistrosUsuariosComponent implements OnInit{
 
 
   Usuarios:any;
+  deleteMessage:any;
 
   constructor(    
     private router:Router,
@@ -25,7 +26,12 @@ export class RegistrosUsuariosComponent implements OnInit{
     this.router.navigate(['editarUsuario/', id]);    
   }
 
-  borrarUsuario(){
+  borrarUsuario(id:any){
+
+    this.apiService.deleteUser(id).subscribe(res=>{
+      this.deleteMessage=res
+      alert(this.deleteMessage.message)
+    })
     alert("Usuario eliminado con exito")
   }
 

@@ -4,22 +4,22 @@
       <tr>
         <th scope="col">Id</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Correo</th>
+        <th scope="col">Nombre usuario</th>        
         <th scope="col">Telefono</th>
-        <th scope="col">Nombre usuario</th>
+        <th scope="col">Correo</th>
         <th scope="col">Opciones</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let user of Usuarios">
-        <th scope="row">{{user.nonbre}}</th>
+        <th scope="row">{{user.id}}</th>
         <td>{{user.nonbre}}</td>
-        <td>{{user.nonbre}}</td>
-        <td>{{user.nonbre}}</td>
-        <td>{{user.nonbre}}</td>
+        <td>{{user.nonbreUsuario}}</td>
+        <td>{{user.telefono}}</td>
+        <td>{{user.correo}}</td>
         <td>
-          <button type="button" class="btn btn-warning">Editar</button>
-          <button type="button" class="btn btn-danger">Borrar</button>
+          <button type="button" class="btn btn-warning" (click)="editarUsuario(user.id)">Editar</button>
+          <button type="button" class="btn btn-danger"(click)="borrarUsuario(user.id)">Borrar</button>
         </td>
       </tr>
     </tbody>
