@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,11 +6,14 @@ import { Router } from '@angular/router';
   templateUrl: './registros-usuarios.component.html',
   styleUrls: ['./registros-usuarios.component.css']
 })
-export class RegistrosUsuariosComponent {
+export class RegistrosUsuariosComponent implements OnInit{
 
   constructor(    
     private router:Router    
   ) { }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   editarUsuario(id:any){
     this.router.navigate(['editarUsuario/', id]);    
