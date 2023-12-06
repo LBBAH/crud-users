@@ -14,6 +14,10 @@ export class RegistrosUsuariosComponent {
 
   editarUsuario(id:any){
     this.router.navigate(['editarUsuario/', id]);    
+  }
 
+  borrarUsuario(id:any){
+    alert("Usuario eliminado con exito")
   }
 }
+
