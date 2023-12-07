@@ -12,7 +12,7 @@ export class ServiceApiService {
   private apiUrl = 'https://educacionespecialmx.site/back_crud/public_html/api';
 
   getUsers(){
-    return this.httpClient.get(`${this.apiUrl}/getUsers`);
+    return this.httpClient.get(`${this.apiUrl}/getUsrs`);
   }
 
   getUserId(id:any){
