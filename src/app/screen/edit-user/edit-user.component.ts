@@ -50,11 +50,16 @@ export class EditUserComponent implements OnInit{
   }
   
   actualizaDatos(id:any){
-    this.apiService.updateUser(id, this.formUser.value).subscribe(res=>{
-      this.messageUpdate=res
-      alert(this.messageUpdate.message)
-      this.router.navigate(['registros']);    
-    })    
+    if(this.formUser.valid){
+      this.apiService.updateUser(id, this.formUser.value).subscribe(res=>{
+        this.messageUpdate=res
+        alert(this.messageUpdate.message)
+        this.router.navigate(['registros']);    
+      })  
+    }else{
+      throw Error("Datos invalidos")
+    }
+     
   }
 
   registros(){
