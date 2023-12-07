@@ -59,6 +59,5 @@ export class EditUserComponent implements OnInit{
 
   registros(){
     this.router.navigate(['registros']);    
-
   }
 }
